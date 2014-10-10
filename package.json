@@ -1,6 +1,6 @@
 {
   "name": "grunt-markup-markdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A grunt wrapper for the node-markup-markdown task",
   "main": "tasks/markup-markdown.js",
   "scripts": {

@@ -1,6 +1,7 @@
 /* jshint node:true */
 var _ = require('lodash');
 var MarkupMarkdown = require('node-markup-markdown');
+var htmlEscape = require('html-escape');
 
 function processJSON (contents, options) {
 
@@ -10,6 +11,10 @@ function processJSON (contents, options) {
         contents[key] = recurseProcessJSON(value);
       }
       else {
+        if (options.htmlSafe) {
+          value = htmlEscape(value);
+        }
+
         contents[key] = MarkupMarkdown.parse(value, options);
       }
     });
@@ -26,7 +31,9 @@ module.exports = function (grunt) {
     'A grunt wrapper for the node-markup-markdown task.',
 
     function() {
-      var options = this.options({});
+      var options = this.options({
+        htmlSafe: true
+      });
 
       this.files.forEach(function(fileDescription) {
         fileDescription.src.forEach(function (file) {

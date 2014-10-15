@@ -1,6 +1,6 @@
 {
   "name": "grunt-markup-markdown",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A grunt wrapper for the node-markup-markdown task",
   "main": "tasks/markup-markdown.js",
   "scripts": {
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/chunksnbits/grunt-markup-markdown",
   "dependencies": {
     "lodash": "^2.4.1",
+    "html-escape": "^1.0.1",
     "node-markup-markdown": "^0.1.1"
   }
 }

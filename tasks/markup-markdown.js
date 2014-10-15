@@ -1,7 +1,5 @@
 /* jshint node:true */
 var _ = require('lodash');
-var htmlEscape = require('html-escape');
-
 var MarkupMarkdown = require('node-markup-markdown');
 
 function processJSON (contents, options) {
@@ -12,9 +10,6 @@ function processJSON (contents, options) {
         contents[key] = recurseProcessJSON(value);
       }
       else {
-        if (options.htmlSafe) {
-          value = htmlEscape(value);
-        }
         contents[key] = MarkupMarkdown.parse(value, options);
       }
     });

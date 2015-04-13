@@ -14,8 +14,8 @@ function processJSON (contents, options) {
         if (options.htmlSafe) {
           value = htmlEscape(value);
         }
-
-        contents[key] = MarkupMarkdown.parse(value, options);
+                
+        contents[key] = value ? MarkupMarkdown.parse(value, options) : value;
       }
     });
     return contents;

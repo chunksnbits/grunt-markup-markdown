@@ -1,3 +1,8 @@
+#### *DEPRECATED (This plugin is no longer maintained*
+#### Archive:
+
+---
+
 # grunt-markup-markdown
 
 Grunt markup parser with customizable markup rules.
